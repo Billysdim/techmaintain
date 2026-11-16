@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="el">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TechMaintain - Χάρτης</title>
+    
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>
+</head>
+<body>
+    
+    <div class="app-container">
+        
+        <header class="top-bar with-back">
+            <a href="index.html" class="back-btn">&lt; Πίσω</a>
+            <h1>Χάρτης Εξυπηρέτησης</h1>
+        </header>
+
+        <main class="map-content">
+            
+            <div id="map"></div>
+
+            <div class="map-action-container">
+                <a href="request.html" class="btn primary-btn submit-btn">Υποβολή Αιτήματος Εδώ</a>
+            </div>
+
+        </main>
+    </div>
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+
+    <script>
+        var map = L.map('map').setView([38.063, 23.588], 14);
+
+        L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            maxZoom: 19,
+            attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+        }).addTo(map);
+
+        var marker1 = L.marker([38.065, 23.592]).addTo(map);
+        marker1.bindPopup("<b>Τεχνικό Κέντρο</b><br>Διαθέσιμο συνεργείο.").openPopup();
+
+        var marker2 = L.marker([38.060, 23.582]).addTo(map);
+        marker2.bindPopup("<b>Τεχνικό Κέντρο Β</b><br>Εξειδικευμένες επισκευές.");
+    </script>
+</body>
+</html>

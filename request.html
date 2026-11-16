@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="el">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TechMaintain - Αίτημα</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+    <div class="app-container">
+        
+        <header class="top-bar with-back">
+            <a href="index.html" class="back-btn">&lt; Πίσω</a>
+            <h1>Αίτημα</h1>
+        </header>
+
+        <main class="content">
+            
+            <h2 class="section-title">Φόρμα Υποστήριξης</h2>
+
+            <form id="support-form" class="support-form">
+                
+                <div class="form-group">
+                    <label for="equipment">Τύπος Εξοπλισμού</label>
+                    <input type="text" id="equipment" name="equipment" placeholder="π.χ. Κινητήρας CNC" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="description">Περιγραφή Προβλήματος</label>
+                    <textarea id="description" name="description" rows="4" placeholder="Περιγράψτε αναλυτικά τη βλάβη..." required></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="priority">Προτεραιότητα (Χαμηλή / Κανονική / Επείγουσα)</label>
+                    <select id="priority" name="priority" required>
+                        <option value="">Επιλέξτε...</option>
+                        <option value="low">Χαμηλή</option>
+                        <option value="normal">Κανονική</option>
+                        <option value="urgent">Επείγουσα</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="phone">Τηλέφωνο Επικοινωνίας</label>
+                    <input type="tel" id="phone" name="phone" placeholder="π.χ. 2101234567" required>
+                </div>
+
+                <button type="submit" class="btn primary-btn submit-btn">Υποβολή Αιτήματος</button>
+                
+            </form>
+
+        </main>
+    </div>
+
+    <script>
+        const form = document.getElementById('support-form');
+
+        form.addEventListener('submit', function(event) {
+            event.preventDefault();
+            alert('Το αίτημά σας υποβλήθηκε με επιτυχία! Η ομάδα τεχνικής υποστήριξης θα επικοινωνήσει σύντομα μαζί σας.');
+            window.location.href = 'index.html';
+        });
+    </script>
+</body>
+</html>
